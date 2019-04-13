@@ -15,6 +15,6 @@ export default {
         }
     },
     resolve(root, args) {
-        return models.users.findById(args.id);
+        return models.users.findByPk(args.id);
     }
 };

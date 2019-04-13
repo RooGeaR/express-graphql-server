@@ -33,23 +33,6 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true
     });
 
-    /*sequelize.sync({force: true})
-        .then(function () {
-            return comment.create({});
-        })
-        .then(function () {
-            return comment.find({});
-        })
-        .then(function(instance){
-            return instance.updateAttributes({created_at: sequelize.literal('CURRENT_TIMESTAMP')});
-        })
-        .then(function () {
-            process.exit(0);
-        })
-        .catch(function(err){
-            console.log('Caught error! ' + err);
-        });*/
-
     comment.associate = function(models) {
         models.comments.belongsTo(models.users, { foreignKey: "user_id", targetKey: "id" });
     }

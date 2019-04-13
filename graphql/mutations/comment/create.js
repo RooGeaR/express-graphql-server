@@ -15,7 +15,7 @@ export default {
             content: args.comment.content,
             created_at: args.comment.created_at,
         }).save().then(function(newcomment) {
-            return models.comments.findById(newcomment.id);
+            return models.comments.findByPk(newcomment.id);
         });
     }
 };

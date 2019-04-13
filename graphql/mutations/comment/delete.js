@@ -14,7 +14,7 @@ export default {
   },
   resolve (source, args) {
     return models.comments
-      .findById(args.id)
+      .findByPk(args.id)
       .then((comment) => {
         return comment.destroy({ force: true });
       });

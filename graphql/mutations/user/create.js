@@ -24,7 +24,7 @@ export default {
               });
             });
 
-            return models.users.findById(newuser.id);
+            return models.users.findByPk(newuser.id);
         });
     }
 };

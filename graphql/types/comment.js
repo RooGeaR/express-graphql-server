@@ -26,7 +26,7 @@ export default new GraphQLObjectType({
                     if (comment.hasOwnProperty('user')) {
                       return comment.user;
                     }
-                    return models.users.findById(comment.user_id);
+                    return models.users.findByPk(comment.user_id);
                 }
             },
             content: {

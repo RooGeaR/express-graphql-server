@@ -36,23 +36,6 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true
   });
 
-  /*sequelize.sync({force: true})
-      .then(function () {
-          return user.create({});
-      })
-      .then(function () {
-          return user.find({});
-      })
-      .then(function(instance){
-          return instance.updateAttributes({created_at: sequelize.literal('CURRENT_TIMESTAMP')});
-      })
-      .then(function () {
-          process.exit(0);
-      })
-      .catch(function(err){
-          console.log('Caught error! ' + err);
-      });*/
-
   user.associate = function(models) {
       models.users.hasMany(models.comments, { foreignKey: "user_id", sourceKey: "id" });
   }
